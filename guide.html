@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Moved</title>
+    </head>
+    <body>
+        <p>Thanks for using the RPNow beta! Your RP has been moved: <code><a id="my-link"></a></code></p>
+        <p><strong>Please update your bookmarks!</strong></p>
+        <script>
+            var a = document.querySelector('#my-link');
+            var url = location.href.replace(location.host, 'rpnow.net');
+            a.innerHTML = url;
+            a.href = url;
+        </script>
+    </body>
+</html>
