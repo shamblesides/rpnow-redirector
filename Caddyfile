@@ -1,0 +1,14 @@
+http://localhost:3002, https://
+
+status 410 /client-files/
+status 410 /api/
+
+redir {
+    if {uri} is /
+    if {uri} is /rp/demo
+    if {uri} is /terms
+    if_op or
+    https://rpnow.net{uri}
+}
+
+rewrite /rp/* guide.html
