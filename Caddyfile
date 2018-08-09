@@ -1,7 +1,11 @@
-http://localhost:3002, https://
+*.rpnow.net
 
 status 410 /client-files/
 status 410 /api/
+
+tls {
+    max_certs 10
+}
 
 redir {
     if {uri} is /
@@ -10,5 +14,7 @@ redir {
     if_op or
     https://rpnow.net{uri}
 }
+
+header / X-Robots-Tag "noindex"
 
 rewrite /rp/* guide.html
